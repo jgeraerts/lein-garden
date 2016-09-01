@@ -88,6 +88,7 @@
         build-paths (mapcat :source-paths builds)
         modified-project (-> project
                              (select-keys [:dependencies
+                                           :repositories
                                            :plugin
                                            :garden])
                              (update-in [:source-paths] concat build-paths))
